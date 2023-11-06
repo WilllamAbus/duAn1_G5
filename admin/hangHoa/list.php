@@ -164,9 +164,27 @@
                             </tr>
                             <nav aria-label="Page navigation example d-block">
 
-                                <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                            <?php
+                                        $LIMIT = 3 ;
+                                        $num = isset($_GET['page_num']) ? intval($_GET['page_num']) :1;
+                                        $connect = pdo_get_connection();
+                                          $sqlCount = "SELECT COUNT(*) as count FROM loai_hang";
+                                         
+                                          $count = $connect->query($sqlCount);
+                                          $countRes = $count->fetch();
+                                          $totalPages =ceil(($countRes['count'] / $LIMIT )) ;
+                                          echo '  <ul class="pagination justify-content-end p-3">';
+                                          for($index = 1; $index <= $totalPages; $index++){
+                                              $active = ($num == $index) ? ' active' : '';
+                                              echo '  <li class="page-item '.$active.'">
+                                              <a class="page-link" href="index.php?page=listProduct&page_num='.$index.'">'.$index.'</a>
+                                              </li>';
+                                          }
+      
+                                          echo' </ul>';
+                                        
+                                        
+                                    ?>
 
 
                             </nav>

@@ -17,7 +17,7 @@ include './user/components/slider.php';
     <div class="row px-xl-5">
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/1692267061265.jpg"
                             alt="1692267061265">
@@ -48,7 +48,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/BasicEconomic.jpg"
                             alt="BasicEconomic">
@@ -80,7 +80,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-4" src="../controller/hinh/BegPofDummie.jpg"
                             alt="BegPofDummie">
@@ -112,7 +112,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/ComputerPriciples.jpg"
                             alt="ComputerPriciples">
@@ -144,7 +144,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-65  picture mt-5 ml-xl-2" src="../controller/hinh/The100bestnonfiction.jpg"
                             alt="The100bestnonfiction">
@@ -176,7 +176,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/Thecuriousdog.jpg"
                             alt="Thecuriousdog">
@@ -208,7 +208,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/TheIntelligentInvestor.jpg"
                             alt="TheIntelligentInvestor">
@@ -240,7 +240,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/theThing.jpg"
                             alt="theThing">
@@ -280,7 +280,7 @@ include './user/components/slider.php';
     <div class="row px-xl-5">
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/TheOBS.jpg" alt="TheOBS.jpg">
                         <!-- <div class="">
@@ -310,7 +310,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/TheEndOFSelfHelp.jpg" alt="TheEndOFSelfHelp">
                         <!-- <div class="">
@@ -340,7 +340,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/MakingTheComplex.jpg" alt="makingTheComplex.jpg">
                         <!-- <div class="">
@@ -370,7 +370,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/bbb.jpg" alt="bbb.jpg">
                         <!-- <div class="">
@@ -400,7 +400,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/MakingTheComplex.jpg" alt="MakingTheComplex">
                         <!-- <div class="">
@@ -430,7 +430,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/TheEndOFSelfHelp.jpg" alt="TheEndOFSelfHelp.jpg">
                         <!-- <div class="">
@@ -460,7 +460,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/theThing.jpg" alt="theThing">
                         <!-- <div class="">
@@ -490,7 +490,7 @@ include './user/components/slider.php';
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-                <a href="index.php?page=sanphamct">
+                <a href="index.php?page=sanpham">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-80  picture mt-5 ml-lg-5" src="../controller/hinh/TheOBS.jpg" alt="">
                         <!-- <div class="">

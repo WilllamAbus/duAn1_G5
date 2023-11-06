@@ -129,3 +129,35 @@ function loai_hang_select_by_id($ma_loai){
     $sql = "SELECT * FROM loai_hang WHERE ma_loai=?";
     return pdo_query_one($sql, $ma_loai);
 }
+
+function loai_hang_select_page(){
+    $LIMIT = 2;
+    $num = isset($_GET['page_num']) ? intval($_GET['page_num']) :1;
+    $offset = ($num - 1) * $LIMIT;
+
+   
+    $sql = "SELECT * FROM loai_hang ORDER BY ma_loai LIMIT $offset , $LIMIT";
+    $result =  pdo_query($sql);
+    return $result;
+}
+
+
+function loai_hang_pagination(){
+
+    if(!isset($_SESSION['page_no'])){
+        $_SESSION['page_no'] = 0;
+    }
+    if(!isset($_SESSION['page_count'])){
+        $row_count = pdo_query_value("SELECT count(*) FROM hang_hoa");
+        $_SESSION['page_count'] = ceil($row_count/10);
+    }
+    if(exist_param("page_no")){
+        $_SESSION['page_no'] = $_REQUEST['page_no'];
+    }
+    if($_SESSION['page_no'] < 0){
+        $_SESSION['page_no'] = $_SESSION['page_count'] - 1;
+    }
+    if($_SESSION['page_no'] >= $_SESSION['page_count']){
+        $_SESSION['page_no'] = 0;
+    }
+}

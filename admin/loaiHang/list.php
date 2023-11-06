@@ -48,7 +48,7 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                    <th><input type="checkbox" name="ma_loai" value="<?=$ma_loai?>"></th>   
+                                        <th><input type="checkbox" name="ma_loai" value="<?= $ma_loai ?>"></th>
                                         <th>MÃ LOẠI</th>
                                         <th>TÊN LOẠI</th>
 
@@ -58,8 +58,8 @@
                                 </thead>
                                 <tbody>
 
-                                    <?php   
-                                    
+                                    <?php
+                                     $i = 1;
                                     foreach ($listdanhmuc as $danhmuc) {
                                         extract($danhmuc);
                                         $suadanhmuc = "index.php?page=suadanhmuc&ma_loai=" . $ma_loai;
@@ -72,6 +72,7 @@
                                 <td><a href="' . $suadanhmuc . '"><input class="btn btn-primary" type="button" value="Sửa"></a> <a href="' . $xoadanhmuc . '"><input class="btn btn-primary" type="button" value="Xóa"></a></td>
                             </tr>';
                                     }
+                                    $i++;
                                     ?>
 
 
@@ -84,7 +85,7 @@
                             <tr>
 
                                 <th colspan="6">
-                                    <button class="btn btn-outline-primary btn-md  " name="addPro" type="submit">Chọn
+                                    <!-- <button class="btn btn-outline-primary btn-md  " name="addPro" type="submit">Chọn
                                         tất cả</button>
 
                                     <button class="btn btn-outline-primary btn-md  " name="addPro" type="submit">Bỏ
@@ -93,13 +94,53 @@
 
                                     <button class="btn btn-outline-primary btn-md  " name="addPro" type="submit">Xóa
                                         các
-                                        mục chọn</button>
+                                        mục chọn</button> -->
 
-                                        <a name="" id="" class="btn btn-outline-primary btn-md" href="index.php?page=addCategories" role="button">Nhập thêm</a>
+                                    <a name="" id="" class="btn btn-outline-primary btn-md"
+                                        href="index.php?page=addCategories" role="button">Nhập thêm</a>
                                 </th>
                             </tr>
 
-                         
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+
+                                    <!-- <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li> -->
+                                    <?php
+                                        $LIMIT = 2 ;
+                                        $num = isset($_GET['page_num']) ? intval($_GET['page_num']) :1;
+                                        $connect = pdo_get_connection();
+                                          $sqlCount = "SELECT COUNT(*) as count FROM loai_hang";
+                                         
+                                          $count = $connect->query($sqlCount);
+                                          $countRes = $count->fetch();
+                                          $totalPages =ceil(($countRes['count'] / $LIMIT )) ;
+                                          echo '  <ul class="pagination justify-content-end p-3">';
+                                          for($index = 1; $index <= $totalPages; $index++){
+                                              $active = ($num == $index) ? ' active' : '';
+                                              echo '  <li class="page-item '.$active.'">
+                                              <a class="page-link" href="index.php?page=listdanhmuc&page_num='.$index.'">'.$index.'</a>
+                                              </li>';
+                                          }
+      
+                                          echo' </ul>';
+                                        
+                                        
+                                    ?>
+                                       <!-- <li class="page-item">
+                                         <a class="page-link" href="#">Next</a>
+                                     </li> -->
+                                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                                 
+                                     <!-- <li class="page-item"><a class="page-link" href="#">2</a></li> -->
+                                     <!-- <li class="page-item">
+                                         <a class="page-link" href="#">Next</a>
+                                     </li> -->
+                                         
+                                </ul>
+                            </nav>
+
 
 
                         </div>
@@ -191,8 +232,7 @@
         });
     </script>
 
-  
+
 </body>
 
 </html>
-

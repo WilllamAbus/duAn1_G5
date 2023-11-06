@@ -14,7 +14,7 @@ height: 100px;
                   extract($danhmuc);
             ?>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
+                <a class="text-decoration-none" href="index.php?page=">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden " style="width: 100px; height: 100px;">
                             <!-- <img class="img-fluid" src="./user/style/img/cat-1.jpg" alt=""> -->
