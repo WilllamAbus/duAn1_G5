@@ -254,7 +254,7 @@ include_once "../dao/nhan_vien.php";
               // -------------------------------THÊM DANH MỤC============================
               case 'listdanhmuc':
 
-                $listdanhmuc = loadall_danhmuc();
+                $listdanhmuc = loai_hang_select_page();
                 include("loaiHang/list.php");
                 break;
 

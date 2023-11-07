@@ -72,6 +72,13 @@
                 <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
+            <a href="index.php?page=" class="nav-link ">
+            <i class="nav-icon fas fa-edit"></i>
+              <p>
+                QUẢN LÝ ĐƠN HÀNG
+                <!-- <i class="right fas fa-angle-left"></i> -->
+              </p>
+            </a>
             <a href="index.php?page=customer" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
               <p>

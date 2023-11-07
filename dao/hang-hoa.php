@@ -105,14 +105,23 @@ function hang_hoa_select_keyword($keyword){
             . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
     return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
 }
-
 function hang_hoa_select_page(){
+    $LIMIT = 2;
+    $num = isset($_GET['page_num']) ? intval($_GET['page_num']) :1;
+    $offset = ($num - 1) * $LIMIT;
+
+   
+    $sql = "SELECT * FROM loai_hang ORDER BY ma_loai LIMIT $offset , $LIMIT";
+    $result =  pdo_query($sql);
+    return $result;
+}
+function hang_hoa_pagination(){
     if(!isset($_SESSION['page_no'])){
         $_SESSION['page_no'] = 0;
     }
     if(!isset($_SESSION['page_count'])){
         $row_count = pdo_query_value("SELECT count(*) FROM hang_hoa");
-        $_SESSION['page_count'] = ceil($row_count/10.0);
+        $_SESSION['page_count'] = ceil($row_count/9.0);
     }
     if(exist_param("page_no")){
         $_SESSION['page_no'] = $_REQUEST['page_no'];
@@ -123,8 +132,10 @@ function hang_hoa_select_page(){
     if($_SESSION['page_no'] >= $_SESSION['page_count']){
         $_SESSION['page_no'] = 0;
     }
-    $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT ".$_SESSION['page_no'].", 10";
-    return pdo_query($sql);
+    $offset = $_SESSION['page_no'] * 3;
+    $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT ".$offset.", 9";
+    $result =  pdo_query($sql);
+    return $result;
 }
 
 function san_pham_select_trend(){
@@ -141,6 +152,9 @@ function insert_sanpham($ten_hh,$don_gia,$giam_gia,$hinh,$mo_ta,$ngay_nhap,$dac_
 
 
    function loadall_sanpham( $inputProduct="",$ma_loai=0){
+    $LIMIT = 3;
+    $num = isset($_GET['page_num']) ? intval($_GET['page_num']) :1;
+    $offset = ($num - 1) * $LIMIT;
     $sql="select * from hang_hoa where 1"; 
     if( $inputProduct!=""){
         $sql.=" and ten_hh like '%". $inputProduct."%'";
@@ -148,7 +162,7 @@ function insert_sanpham($ten_hh,$don_gia,$giam_gia,$hinh,$mo_ta,$ngay_nhap,$dac_
     if($ma_loai>0){
         $sql.=" and ma_loai ='".$ma_loai."'";
     }
-    $sql.=" order by ma_hh desc";
+    $sql.=" order by ma_hh desc limit $offset, $LIMIT";
     $listProduct = pdo_query($sql);
     return $listProduct;
 }
