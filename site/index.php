@@ -1,15 +1,18 @@
 
 <?php
 session_start();
+ob_start();
+
 include 'user/components/stylesshet.php';
 include 'user/components/header.php';
 require_once '../common/global.php';
 include_once '../dao/hang-hoa.php';
 include_once '../dao/loai.php';
-// include_once '../dao/sanpham.php';
-?>
+include_once '../dao/user.php';
 
-<?
+
+
+
 
 
 // include './account/changePass.php';
@@ -69,4 +72,4 @@ if (isset($_GET["page"])) {
 include 'user/components/footer.php';
 
 
-
+ob_end_flush();
