@@ -1,51 +1,60 @@
 <?php
 // Kết nối CSDL 
-$dsn = 'mysql:host=localhost;dbname=bookstore_g5';
-$username = 'huytv_pc07617';
-$password = '192383T&';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $ten_nd = isset($_POST['ten_nd']) ? $_POST['ten_nd'] : "";
+  $email = isset($_POST['email']) ? $_POST['email'] : "";
+  $sdt = isset($_POST['sdt']) ? $_POST['sdt'] : "";
+  $mat_khau = isset($_POST['mat_khau']) ? $_POST['mat_khau'] : "";
+  $confirm = isset($_POST['xac_nhan_mat_khau']) ? $_POST['xac_nhan_mat_khau'] : "";
 
-try {
-  $conn = new PDO($dsn, $username, $password);
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo 'Kết nối thất bại: ' . $e->getMessage();
+
+
+  // Kiểm tra tính hợp lệ
+  $errors = [];
+
+  if (empty($ten_nd)) {
+    $errors['require'] = 'Vui lòng nhập tên đăng nhập';
+  } else if (empty($email)) {
+    $errors['email']['require'] = 'Vui lòng nhập email';
+  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Email không hợp lệ';
+  } elseif (empty($mat_khau)) {
+    $errors['mat_khau']['require'] = 'Vui lòng nhập mật khẩu';
+  } elseif ($mat_khau !== $confirm) {
+    $errors['prePass']['require'] = 'Xác nhận mật khẩu không khớp';
+  }
+
+
+
+
+
+
+
+
+  if (empty($errors)) {
+    $conn = pdo_get_connection();
+    $sql = "INSERT INTO nguoi_dung (ten_nd, email, sdt, mat_khau) VALUES (:ten_nd, :email, :sdt, :mat_khau)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":ten_nd", $ten_nd);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":sdt", $sdt);
+    $stmt->bindParam(":mat_khau", $mat_khau);
+
+    $stmt->execute();
+    echo "<script>alert('Đăng ký thành công !'); location.href='index.php?page=login'</script>";
+
+    exit;
+
+  } 
+
+
+
+
+
 }
 
 // Xử lý khi submit form
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  // Lấy dữ liệu từ form
-  $ten_nd = $_POST['ten_nd'];
-  $email = $_POST['email'];
-  $sdt = $_POST['sdt'];
-  $mat_khau = $_POST['mat_khau'];
-
-  // Kiểm tra dữ liệu
-  if (empty($ten_nd) || empty($email) || empty($mat_khau) || empty($sdt)) {
-    $error = 'Vui lòng nhập đầy đủ thông tin';
-  } else {
-
-
-
-    // Câu lệnh INSERT
-    $sql = "INSERT INTO nguoi_dung(ten_nd, email, sdt, mat_khau) 
-            VALUES (:ten_nd, :email, :sdt, :mat_khau)";
-
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':ten_nd', $ten_nd);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':sdt', $sdt);
-    $stmt->bindParam(':mat_khau', $mat_khau);
-
-    // Thực thi câu lệnh
-    if ($stmt->execute()) {
-      
-          echo "<script>window.location.href='index.php?page=login'</script>";           
-    } else {
-      $error = 'Có lỗi xảy ra';
-    }
-  }
-}
 
 ?>
 

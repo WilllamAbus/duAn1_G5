@@ -1,7 +1,7 @@
 <?php
-ob_start();
-  session_start();
 
+  session_start();
+  ob_start();
   // Clear all session variables
   if(isset($_COOKIE) ){
  
@@ -15,4 +15,6 @@ ob_start();
   // Redirect to the login page or any other page
   header('Location: ../signIn.php');
   exit();
+  ob_end_flush();
 ?>
+
